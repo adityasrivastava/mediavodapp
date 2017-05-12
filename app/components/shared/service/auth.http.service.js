@@ -11,12 +11,12 @@ angular.module('mediavodapp.http')
                     data: { username: user, password: password }
                 });
             },
-            register(user, password , email) {
+            register(user, password) {
                 return http.makeCall({
                     method: 'POST',
                     endpoint: ENDPOINT_CONFIG.register,
                     headers: { "Content-Type": "application/json" },
-                    data: { username: user, password: password, name: user, email: email, socialProvider: "REGISTER_FORM" }
+                    data: { username: user, password: password}
                 });
             }
         };

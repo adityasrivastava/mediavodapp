@@ -1,1 +1,14 @@
 <p>I am Home</p>
+
+<div class="home-container">
+
+    <div video-element video-content="selectedVideo"></div>
+
+    <div class="movies-list">
+
+        <div ng-repeat="m in movies.entries">
+            <div class="video-list" ng-click="selectVideo(m)">{{m.title}}</div>
+        </div>
+
+    </div>
+</div>

@@ -1,6 +1,8 @@
 'use strict';
 
-angular.module('mediavodapp.shared', [])
+angular.module('mediavodapp.shared', [
+    'mediavodapp.http'
+])
 .config(['$routeProvider',function($routeProvider){
 
 
