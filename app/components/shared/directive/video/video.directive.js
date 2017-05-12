@@ -2,7 +2,7 @@ angular.module('mediavodapp').directive('videoElement', [function(){
 
     return {
 
-        restrict : 'EA',
+        restrict : 'A',
 
         templateUrl : 'components/shared/directive/video/template.html',
 
