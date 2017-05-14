@@ -1,14 +1,42 @@
-<p>I am Home</p>
+<div class="home-container container">
 
-<div class="home-container">
+    <!--<video-element  video-content="selectedVideo"></video-element>-->
 
-    <video-element  video-content="selectedVideo"></video-element>
-
-    <div class="movies-list">
-
-        <div ng-repeat="m in movies.entries">
-            <div class="video-list" ng-click="selectVideo(m)">{{m.title}}</div>
-        </div>
-
+    <div class="movies-list" ng-if="movies.entries">
+        <carousel data="movies.entries"></carousel>
     </div>
+
+    <div class="own-carousel owl-theme">
+        <div class="item">1</div>
+        <div class="item">1w</div>
+        <div class="item">1sd</div>
+    </div>        
+
+
+    <!--<div class="movies-list" style="height: 305px" ng-if="movies.entries">
+        <div uib-carousel active="carouselproperties.active" interval="carouselproperties.interval" no-wrap="carouselproperties.noWrapSlides">
+            <div uib-slide ng-repeat="m in movies.entries track by $index" index="$index">
+                <img ng-src="{{m.images[0].url}}" style="margin:auto;"/>
+                <div class="carousel-caption">
+                    <h4>{{m.title}}</h4>
+                </div>
+                <img ng-src="{{m.images[0].url}}" style="margin:auto;"/>
+                <div class="carousel-caption">
+                    <h4>{{m.title}}</h4>
+                </div>
+                <img ng-src="{{m.images[0].url}}" style="margin:auto;"/>
+                <div class="carousel-caption">
+                    <h4>{{m.title}}</h4>
+                </div>
+                <img ng-src="{{m.images[0].url}}" style="margin:auto;"/>
+                <div class="carousel-caption">
+                    <h4>{{m.title}}</h4>
+                </div>
+                <img ng-src="{{m.images[0].url}}" style="margin:auto;"/>
+                <div class="carousel-caption">
+                    <h4>{{m.title}}</h4>
+                </div>
+            </div>
+        </div>
+    </div>-->
 </div>

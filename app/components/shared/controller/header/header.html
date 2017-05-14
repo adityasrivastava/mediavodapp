@@ -1,2 +1,21 @@
-<p>I am a header</p>
-
+<nav class="navbar navbar-default navbar-fixed-top" style="background-color: #f5bdbd;">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#!/home"><i class="glyphicon glyphicon-facetime-video"></i> Media VOD App</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <!--<ul class="nav navbar-nav navbar-left">
+            <li ng-class="{active: selectedRoute('/home')}"><a href="/">Home</a></li>
+          </ul>-->
+          <ul class="nav navbar-nav navbar-right">
+            <li ng-class="{active: selectedRoute('/login')}"><a href="#!/login"><i class="glyphicon glyphicon-user"></i><span> Login</span></a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>

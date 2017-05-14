@@ -10,6 +10,10 @@ config(['$locationProvider', '$routeProvider', function($locationProvider, $rout
 
   $locationProvider.hashPrefix('!');
 
-  $routeProvider.otherwise({redirectTo: '/login'});
+  $routeProvider.otherwise({redirectTo: '/home'});
 
 }]);
+
+$(document).ready(function(){
+  $(".owl-carousel").owlCarousel();
+});

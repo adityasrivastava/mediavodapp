@@ -1,8 +1,7 @@
 'use strict';
 
 angular.module('mediavodapp.components')
-.controller('HomeController',['$scope','moviesFactory',function($scope, moviesFactory){
-
+.controller('HomeController',['$scope','$timeout','moviesFactory',function($scope, $timeout, moviesFactory){
     $scope.movies = {};
 
     $scope.selectedVideo = {};
