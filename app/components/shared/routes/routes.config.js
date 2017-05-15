@@ -16,10 +16,11 @@ angular.module('mediavodapp.shared')
             templateUrl : 'components/shared/controller/register/register.html',
             controller : 'RegisterController'
         })
-        .when('/profile', {
-            templateUrl : 'components/shared/controller/profile/profile.html',
-            controller : 'ProfileController'
-        });
+        .otherwise({redirectTo: '/home'});
+        // .when('/profile', {
+        //     templateUrl : 'components/shared/controller/profile/profile.html',
+        //     controller : 'ProfileController'
+        // });
 
 
 }])

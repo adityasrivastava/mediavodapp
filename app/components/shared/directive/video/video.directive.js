@@ -19,8 +19,6 @@ angular.module('mediavodapp').directive('videoElement', [function(){
         },
 
         link : function (scope, elm, attr, ctr) {
-            console.log("Call link");
-            console.log(attr, elm);
             plyr.setup(elm,{});
             console.log(scope.videoContent);
         }

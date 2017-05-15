@@ -1,13 +1,22 @@
 <div class="login-container container">
 
-    <div class="login">
-
-        <input type="text" ng-model="login.username" placeholder="Please enta a Username"/>
-        <input type="password" ng-model="login.password" placeholder="Please enta a Password"/>
-        <button type="submit" ng-click="loginUser()">Log In</button>
-          <a href="#!/register">Register</a>
-
-
+    <div class="login form">
+        <div class="row">
+            <div class="col-md-12">
+                <input class="form-control" type="text" ng-model="login.username" placeholder="Please enta a Username"/>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <input class="form-control" type="password" ng-model="login.password" placeholder="Please enta a Password"/>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-control btn btn-primary" type="submit" ng-click="loginUser()">Log In</div>
+        </div>
+       <div class="row">
+            <div class="form-control btn btn-primary" type="submit" ng-click="registerUser()">Register</div>
+        </div>
     </div>
 
 </div>

@@ -1,5 +1,3 @@
-<div>Video template</div>
-
-<video poster="/path/to/poster.jpg" controls>
-    <source src="/path/to/video.mp4" type="video/mp4">
+<video poster="{{videoContent.images[0].url}}" controls>
+    <source ng-src="{{videoContent.contents[0].url}}" type="video/mp4">
 </video>

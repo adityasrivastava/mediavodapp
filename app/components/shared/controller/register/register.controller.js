@@ -9,8 +9,9 @@ angular.module('mediavodapp.shared')
     }
 
     $scope.registerUser = function () {
-        AuthHttpService.register($scope.login.username, $scope.login.password).then(function(data){
+        AuthHttpService.register($scope.register.username, $scope.register.password).then(function(data){
             console.log("Register success");
+            $location.path('/home');
         }).catch(function(data){
             console.log("Register failed");
         }).finally(function(){

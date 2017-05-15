@@ -1,13 +1,20 @@
-<p>I am register page</p>
+<div class="register form">
 
-<div class="container">
-
-    <div class="register">
-
-        <input type="text" ng-model="register.username" placeholder="Please enter a Username"/>
-        <input type="password" ng-model="register.password" placeholder="Please enter a Password"/>
-        <button type="submit" ng-click="registerUser()">Log In</button>
-
+        <div class="row">
+            <div class="col-md-12">
+                <input class="form-control" type="text" ng-model="register.username" placeholder="Please enter a Username"/>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <input class="form-control" type="password" ng-model="register.password" placeholder="Please enter a Password"/>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-control btn btn-primary" ng-click="registerUser()">Register</div>
+            </div>
+        </div>
     </div>
 
 </div>

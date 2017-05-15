@@ -3,7 +3,8 @@
 angular.module('mediavodapp').directive('carousel', [function(){
 
     return {
-        restrict : 'E',
+        restrict : 'EA',
+        // transclude : true,
         templateUrl : 'components/shared/directive/carousel/template.html',
         scope : {
             data: '='
@@ -13,19 +14,19 @@ angular.module('mediavodapp').directive('carousel', [function(){
         },
         link: function(scope, elm, attr, ctr) {
             console.log(scope.data);
-            $(elm[0]).owlCarousel({
-                loop : true,
-                margin: 10,
-                nav: true,
-                responsive : {
+            $(elm).owlCarousel({
+                loop:true,
+                margin:10,
+                nav:true,
+                responsive:{
                     0:{
-                        items:10
+                        items:1
                     },
                     600:{
-                        items:2
+                        items:3
                     },
                     1000:{
-                        items:2
+                        items:5
                     }
                 }
             });
