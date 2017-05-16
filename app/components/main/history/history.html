@@ -1,0 +1,21 @@
+<div class="home-container container">
+
+    <div class="movies-list" ng-if="movies.entries">
+        <div uib-carousel active="carouselproperties.active" interval="carouselproperties.interval" no-wrap="carouselproperties.noWrapSlides">
+            <div uib-slide ng-repeat="m in movies.entries track by $index" index="$index">
+            <div class="carousel-item-container" ng-click="selectVideo(m)">
+                <img ng-src="{{m.images[0].url}}" style="margin:auto;"/>
+                <div class="carousel-caption">
+                    <h4>{{m.title}}</h4>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/ng-template" id="playerModal.html">
+        <div class="modal-body" id="modal-body">
+            <video-element  video-content="$playerCtrl.videoDetails"></video-element>
+        </div>
+</script>

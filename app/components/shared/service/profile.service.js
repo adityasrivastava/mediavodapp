@@ -8,7 +8,7 @@ angular.module('mediavodapp').service('UserProfileService',[function(){
         setProfile(data) {
             profile = data;
         },
-        getProfile(data) {
+        getProfile() {
             return profile;
         }
     }

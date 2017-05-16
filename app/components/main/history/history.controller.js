@@ -1,12 +1,12 @@
 'use strict';
 
 angular.module('mediavodapp.components')
-.controller('HomeController',['$scope','$timeout','moviesFactory','$uibModal','UserProfileService',function($scope, $timeout, moviesFactory, $uibModal, UserProfileService){
+.controller('MovieHistoryController',['$scope','$timeout','moviesFactory','$uibModal','UserProfileService',function($scope, $timeout, moviesFactory, $uibModal, UserProfileService){
     $scope.movies = {};
 
     $scope.selectedVideo = {};
 
-     $scope.userprofile = {};
+    $scope.userprofile = {};
 
     $scope.selectVideo = function (videoSelected) {
         console.log(videoSelected);
@@ -22,18 +22,12 @@ angular.module('mediavodapp.components')
                     }
             }
         });
-
-        moviesFactory.addMoviesHistory($scope.selectedVideo, $scope.userprofile).then(function(success){
-            console.log("Video history added");
-        }).catch(function(){
-            console.log("Video history not added");
-        });
     }
 
 
     function init() {
-               $scope.userprofile =  UserProfileService.getProfile();
-        $scope.movies = moviesFactory.getMoviesList().then(function(success){
+       $scope.userprofile =  UserProfileService.getProfile();
+        $scope.movies = moviesFactory.getMoviesHistory($scope.userprofile.username).then(function(success){
             console.log(success);
             $scope.movies = success;
         }).catch(function(error){
