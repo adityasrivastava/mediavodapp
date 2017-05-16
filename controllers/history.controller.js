@@ -17,6 +17,7 @@ router.get('/', function (req, res) {
 
 router.post('/', function (req, res) {
     if(req.body != undefined) {
+        console.log(req.body);
         service.addVideoHistory(req.body).then(function(data){
             res.status(200);
             res.send("Video history added");

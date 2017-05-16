@@ -17,7 +17,7 @@ angular.module('mediavodapp.shared')
             controller : 'RegisterController'
         })
         .when('/history', {
-            templateUrl : 'components/shared/controller/register/history.html',
+            templateUrl : 'components/shared/controller/history/history.html',
             controller : 'MovieHistoryController'
         })
         .otherwise({redirectTo: '/home'});

@@ -25,6 +25,7 @@ angular.module('mediavodapp.shared').factory('moviesFactory', ['ENDPOINT_CONFIG'
                 method: 'POST',
                 endpoint: ENDPOINT_CONFIG.movieshistory,
                 headers: { "Content-Type": "application/json" },
+                data: videosession
             }); 
         }
     };

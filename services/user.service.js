@@ -3,7 +3,7 @@ var mongo = require('mongoskin');
 var Q = require('q');
 
 var db = mongo.db(config.connectionString,{ native_parser: true });
-db.bind('users');
+
 
 var service = {};
 
@@ -16,25 +16,37 @@ service.getVideoHistory = getVideoHistory;
 module.exports = service;
 
 function addVideoHistory(videohistory) {
-
+db.bind('videohistory');
      var deferred = Q.defer();
 
-    db.videohistory.insert(videohistory, function(error, result){
+    db.videohistory.findOne({title: videohistory.title}, function(error, result){
         if(error) deferred.reject(error);
 
         if(result) {
-            deferred.resolve(result);
+            deferred.reject('Video already exists in history');
         }else{
-            deferred.reject('Username video '+user.username+" does not exists.");
+            insertVideoHistory(videohistory);
         }
     });
+
+    function insertVideoHistory(videohistory) {
+        db.videohistory.insert(videohistory, function(error, result){
+            if(error) deferred.reject(error);
+
+            if(result) {
+                deferred.resolve(result);
+            }else{
+                deferred.reject('Video history not insert.');
+            }
+        });
+    }
 
     return deferred.promise;
 
 }
 
 function getVideoHistory(username) {
-
+db.bind('videohistory');
      var deferred = Q.defer();
 
     db.videohistory.findOne({username: username}, function(error, result){
@@ -52,6 +64,7 @@ function getVideoHistory(username) {
 }
 
 function login(user) {
+    db.bind('users');
     var deferred = Q.defer();
 
     db.users.findOne({username: user.username}, function(error, result){
@@ -68,6 +81,7 @@ function login(user) {
 }
 
 function create(user) {
+    db.bind('users');
     var deferred = Q.defer();
 
     db.users.findOne({username: user.username}, function(error, result){

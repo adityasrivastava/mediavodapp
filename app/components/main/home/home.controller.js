@@ -23,7 +23,7 @@ angular.module('mediavodapp.components')
             }
         });
 
-        moviesFactory.addMoviesHistory($scope.selectedVideo, $scope.userprofile).then(function(success){
+        moviesFactory.addMoviesHistory($scope.selectedVideo, $scope.userprofile.username).then(function(success){
             console.log("Video history added");
         }).catch(function(){
             console.log("Video history not added");
