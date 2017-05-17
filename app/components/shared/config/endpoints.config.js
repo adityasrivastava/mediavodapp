@@ -6,6 +6,6 @@ angular.module('mediavodapp.shared').value('ENDPOINT_CONFIG',
         register: '/register',
         login: '/login',
         movies: 'https://demo2697834.mockable.io/movies',
-        movieshistory : '/history'
+        movieshistory : '/user/history'
     }
 );

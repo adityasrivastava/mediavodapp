@@ -23,3 +23,32 @@
   content: "|";
   padding-right: 0.3em;
 }
+
+.glyphicon-chevron-left {
+  color: #03A9F4;
+}
+
+.glyphicon-chevron-right {
+  color: #03A9F4;
+}
+
+.glyphicon-facetime-video{
+    color: #03A9F4;
+}
+
+.carousel-control.right{
+    background-image: none;
+}
+
+.carousel-control.left {
+    background-image: none;
+}
+
+.navbar-brand {
+  color: #03A9F4;
+}
+
+.glyphicon-user{
+  color: #03A9F4;
+}
+

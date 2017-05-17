@@ -1,5 +1,5 @@
 <section ng-controller="HeaderController">
-<nav class="navbar navbar-default navbar-fixed-top" style="background-color: #f5bdbd; position: relative;">
+<nav class="navbar navbar-default navbar-fixed-top" style="position: relative;">
       <div class="container">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -8,15 +8,15 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#!/home"><i class="glyphicon glyphicon-facetime-video"></i> Media VOD App</a>
+          <a class="navbar-brand" href="#!/user/home" style="color: #03A9F4;"><i class="glyphicon glyphicon-facetime-video"></i> Media VOD App</a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <!--<ul class="nav navbar-nav navbar-left">
             <li ng-class="{active: selectedRoute('/home')}"><a href="/">Home</a></li>
           </ul>-->
           <ul class="nav navbar-nav navbar-right">
-            <li  ng-if="profile" ng-class="{active: selectedRoute('/history')}"><a href="#!/history"><span>History</span></a></li>
-            <li  ng-class="{active: selectedRoute('/login')}"><a href="#!/login"><i class="glyphicon glyphicon-user"></i><span ng-if="!profile"> Login</span><span ng-if="profile"> {{userprofile.username}}</span></a></li>
+            <li  ng-if="profile" ng-class="{active: selectedRoute('/user/history')}" style="color: #03A9F4;"><a href="#!/user/history"><span>History</span></a></li>
+            <li  ng-class="{active: selectedRoute('/login')}" ><a href="#!/login" style="color: #03A9F4;"><i class="glyphicon glyphicon-user"></i><span ng-if="!profile" style="color: #03A9F4;"> Login</span><span ng-if="profile" style="color: #03A9F4;"> {{userprofile.username}}</span></a></li>
           </ul>
         </div>
       </div>

@@ -8,6 +8,13 @@ angular.module('mediavodapp.components')
 
      $scope.userprofile = {};
 
+     $scope.carouselproperties = {
+         active : 1,
+         interval : 2000,
+         nopause : false,
+         notransition: false
+     }
+
     $scope.selectVideo = function (videoSelected) {
         console.log(videoSelected);
         $scope.selectedVideo = videoSelected;
@@ -34,7 +41,6 @@ angular.module('mediavodapp.components')
     function init() {
                $scope.userprofile =  UserProfileService.getProfile();
         $scope.movies = moviesFactory.getMoviesList().then(function(success){
-            console.log(success);
             $scope.movies = success;
         }).catch(function(error){
             console.log("An error occurred: ", error);
@@ -57,7 +63,5 @@ angular.module('mediavodapp').controller('SelectVideoController',['$uibModalInst
         console.log("closed");
         $playerCtrl.videoDetails = undefined;
     });
-
-    console.log("Called");
 
 }])

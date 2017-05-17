@@ -3,12 +3,9 @@
 angular.module('mediavodapp.shared', [
     'mediavodapp.http'
 ])
-.config(['$routeProvider',function($routeProvider){
-
-
-
+.config(['$routeProvider','$httpProvider',function($routeProvider,$httpProvider){
+  $httpProvider.interceptors.push('SessionInterceptor');
 }])
 .run([function(){
-
 
 }]);

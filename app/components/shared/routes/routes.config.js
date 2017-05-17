@@ -4,7 +4,7 @@ angular.module('mediavodapp.shared')
 .config(['$routeProvider', function($routeProvider){
 
     $routeProvider
-        .when('/home', {
+        .when('/user/home', {
             templateUrl : 'components/main/home/home.html',
             controller: 'HomeController'
         })
@@ -16,15 +16,10 @@ angular.module('mediavodapp.shared')
             templateUrl : 'components/shared/controller/register/register.html',
             controller : 'RegisterController'
         })
-        .when('/history', {
+        .when('/user/history', {
             templateUrl : 'components/shared/controller/history/history.html',
             controller : 'MovieHistoryController'
         })
-        .otherwise({redirectTo: '/home'});
-        // .when('/profile', {
-        //     templateUrl : 'components/shared/controller/profile/profile.html',
-        //     controller : 'ProfileController'
-        // });
-
+        .otherwise({redirectTo: '/login'});
 
 }])

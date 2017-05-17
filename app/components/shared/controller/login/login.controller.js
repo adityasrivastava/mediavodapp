@@ -7,6 +7,9 @@ angular.module('mediavodapp.shared')
         username : '',
         password : ''
     }
+
+    $scope.loginfailed = false;
+
     $scope.registerUser = function () {
         $location.path("/register");
     }
@@ -18,9 +21,11 @@ angular.module('mediavodapp.shared')
              $rootScope.$broadcast('userprofile', {value: true}); 
             localStorage.setItem('username', $scope.login.username);
             localStorage.setItem('password', $scope.login.password); 
+            $scope.loginfailed = false;
             $location.path("#!/home");          
         }).catch(function(data){
             console.log("Login failed");
+            $scope.loginfailed = true;
         }).finally(function(){
             $scope.login.username = '';
             $scope.login.password = '';  
