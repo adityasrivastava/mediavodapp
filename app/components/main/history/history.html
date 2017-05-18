@@ -6,20 +6,12 @@
         </div>    
     </div>
 
-    <div class="row">
-        <div class="col-md-12" style="margin-top: 10px;margin-bottom: 10px;">
-                <div class="movies-list" ng-if="movies">
-        <div uib-carousel active="carouselproperties.active" interval="carouselproperties.interval" no-transition="carouselproperties.notransition" no-pause="carouselproperties.nopause">
-            <div uib-slide ng-repeat="m in movies.entries track by $index" index="$index">
-            <div class="carousel-item-container" ng-click="selectVideo(m)">
-                <img ng-src="{{m.images[0].url}}" style="margin:auto;"/>
-                <div class="carousel-caption">
-                    <h4 style="color: #03A9F4;">{{m.title}}</h4>
-                </div>
-            </div>
-            </div>
+    <div class="row" style="margin-top: 10px;margin-bottom: 10px;" ng-repeat="sv in splitVideos track by $index">
+        <div class="col-md-4" ng-repeat="s in sv">
+        <div>
+             <img ng-src="{{s.images[0].url}}" />
+            <h5>{{s.title}}</h5>
         </div>
-    </div>
         </div>
     </div>
 

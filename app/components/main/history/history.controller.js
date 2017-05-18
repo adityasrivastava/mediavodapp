@@ -4,6 +4,8 @@ angular.module('mediavodapp.components')
 .controller('MovieHistoryController',['$scope','$timeout','moviesFactory','$uibModal','UserProfileService',function($scope, $timeout, moviesFactory, $uibModal, UserProfileService){
     $scope.movies = {};
 
+    $scope.splitVideos = [];
+
     $scope.selectedVideo = {};
 
     $scope.userprofile = {};
@@ -24,12 +26,29 @@ angular.module('mediavodapp.components')
         });
     }
 
+    function groupElements (data) {
+        var result = [], MAX_SIZE = 3;
+       
+        // if(typeof(data) === 'object') {
+        //     result.push([data]);
+        //     return result;
+        // }
+
+        while (data.length > 0) {
+            result.push(data.splice(0, MAX_SIZE));
+        }
+
+        return result;
+    }
+
 
     function init() {
        $scope.userprofile =  UserProfileService.getProfile();
         $scope.movies = moviesFactory.getMoviesHistory($scope.userprofile.username).then(function(success){
-            console.log(success);
+           
             $scope.movies = success;
+            $scope.splitVideos = groupElements($scope.movies);
+            console.log($scope.splitVideos);
         }).catch(function(error){
             console.log("An error occurred: ", error);
         }).finally(function(){

@@ -5,12 +5,12 @@ var router = express.Router();
 
 router.put('/', function (req, res) {
     if(req.body != undefined) {
-        console.log(req.body);
         service.getVideoHistory(req.body).then(function(data){
             res.status(200);
             res.send(data);
         }).catch(function(error){
             res.status(500);
+            console.log(error);
             res.send("Video history not found");
         });
     }

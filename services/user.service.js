@@ -50,8 +50,8 @@ function addVideoHistory(videohistory) {
 function getVideoHistory(username) {
     db.bind('videohistory');
      var deferred = Q.defer();
-
-    db.videohistory.findOne(username, function(error, result){
+console.log(username);
+    db.videohistory.find(username).toArray(function(error, result){
         if(error) deferred.reject(error);
 
         if(result) {
