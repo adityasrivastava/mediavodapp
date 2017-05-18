@@ -30,17 +30,18 @@ Steps involved to start the application:
 
 Keyboard shortcuts:
 
-key	    global	    action
-0 to 9	  ✔	      Seek from 0 to 90% respectively
-space		          Toggle playback
-K	        ✔	      Toggle playback
-←		              Seek backward by the seekTime option
-→		              Seek forward by the seekTime option
-↑		              Increase volume
-↓		              Decrease volume
-M	        ✔	      Toggle mute
-F	        ✔	      Toggle fullscreen
-C	        ✔	      Toggle captions
+| key	    | global	|     action                              | 
+|---------|---------|-----------------------------------------| 
+| 0 to 9	|   ✔	    |   Seek from 0 to 90% respectively       | 
+| space		|         |   Toggle playback                       | 
+| K	      |   ✔	    |   Toggle playback                       | 
+| ←		    |         |   Seek backward by the seekTime option  | 
+| →		    |         |   Seek forward by the seekTime option   | 
+| ↑		    |         |   Increase volume                       | 
+| ↓		    |         |   Decrease volume                       | 
+| M	      |   ✔	    |   Toggle mute                           | 
+| F	      |   ✔	    |   Toggle fullscreen                     | 
+| C	      |   ✔	    |   Toggle captions                       | 
 
 Note: Configure mongodb connection details in config.json
 
