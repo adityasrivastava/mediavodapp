@@ -22,7 +22,7 @@ angular.module('mediavodapp.shared')
             localStorage.setItem('username', $scope.login.username);
             localStorage.setItem('password', $scope.login.password); 
             $scope.loginfailed = false;
-            $location.path("#!/home");          
+            $location.path("/home");          
         }).catch(function(data){
             console.log("Login failed");
             $scope.loginfailed = true;

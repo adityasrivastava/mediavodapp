@@ -2,14 +2,14 @@
 
 angular.module('mediavodapp.components')
 .controller('HomeController',['$scope','$timeout','moviesFactory','$uibModal','UserProfileService',function($scope, $timeout, moviesFactory, $uibModal, UserProfileService){
-    $scope.movies = {};
+    $scope.movies = undefined;
 
     $scope.selectedVideo = {};
 
      $scope.userprofile = {};
 
      $scope.carouselproperties = {
-         active : 1,
+         active : 0,
          interval : 2000,
          nopause : false,
          notransition: false
@@ -30,17 +30,21 @@ angular.module('mediavodapp.components')
             }
         });
 
-        moviesFactory.addMoviesHistory($scope.selectedVideo, $scope.userprofile.username).then(function(success){
-            console.log("Video history added");
-        }).catch(function(){
-            console.log("Video history not added");
-        });
+        if( $scope.userprofile.username != undefined) {
+            moviesFactory.addMoviesHistory($scope.selectedVideo, $scope.userprofile.username).then(function(success){
+                console.log("Video history added");
+            }).catch(function(){
+                console.log("Video history not added");
+            });
+        }
+
     }
 
 
     function init() {
                $scope.userprofile =  UserProfileService.getProfile();
         $scope.movies = moviesFactory.getMoviesList().then(function(success){
+            console.log(success);
             $scope.movies = success;
         }).catch(function(error){
             console.log("An error occurred: ", error);
@@ -54,7 +58,7 @@ angular.module('mediavodapp.components')
 
 }]);
 
-angular.module('mediavodapp').controller('SelectVideoController',['$uibModalInstance','videoDetails',"$scope",function($uibModalInstance,videoDetails,$scope){
+angular.module('mediavodapp.components').controller('SelectVideoController',['$uibModalInstance','videoDetails',"$scope",function($uibModalInstance,videoDetails,$scope){
 
     var $playerCtrl = this;
     $playerCtrl.videoDetails = videoDetails;

@@ -16,18 +16,20 @@ service.getVideoHistory = getVideoHistory;
 module.exports = service;
 
 function addVideoHistory(videohistory) {
-db.bind('videohistory');
+    db.bind('videohistory');
      var deferred = Q.defer();
 
-    db.videohistory.findOne({title: videohistory.title}, function(error, result){
-        if(error) deferred.reject(error);
+    // db.videohistory.findOne({title: videohistory.title}, function(error, result){
+    //     if(error) deferred.reject(error);
 
-        if(result) {
-            deferred.reject('Video already exists in history');
-        }else{
-            insertVideoHistory(videohistory);
-        }
-    });
+    //     if(result) {
+    //         deferred.reject('Video already exists in history');
+    //     }else{
+    //         insertVideoHistory(videohistory);
+    //     }
+    // });
+
+    insertVideoHistory(videohistory);
 
     function insertVideoHistory(videohistory) {
         db.videohistory.insert(videohistory, function(error, result){
@@ -36,7 +38,7 @@ db.bind('videohistory');
             if(result) {
                 deferred.resolve(result);
             }else{
-                deferred.reject('Video history not insert.');
+                deferred.reject('Video history not inserted.');
             }
         });
     }
@@ -46,16 +48,16 @@ db.bind('videohistory');
 }
 
 function getVideoHistory(username) {
-db.bind('videohistory');
+    db.bind('videohistory');
      var deferred = Q.defer();
 
-    db.videohistory.findOne({username: username}, function(error, result){
+    db.videohistory.findOne(username, function(error, result){
         if(error) deferred.reject(error);
 
         if(result) {
             deferred.resolve(result);
         }else{
-            deferred.reject('Username video '+user.username+" does not exists.");
+            deferred.reject('Username video '+username+" does not exists.");
         }
     });
 

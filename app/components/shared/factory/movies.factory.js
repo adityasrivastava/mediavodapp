@@ -12,9 +12,10 @@ angular.module('mediavodapp.shared').factory('moviesFactory', ['ENDPOINT_CONFIG'
         },
         getMoviesHistory(username) {
             return http.makeCall({
-                method: 'GET',
-                endpoint: ENDPOINT_CONFIG.movieshistory+"?username="+username,
+                method: 'PUT',
+                endpoint: ENDPOINT_CONFIG.movieshistory,
                 headers: { "Content-Type": "application/json" },
+                data: {username : username}
             }); 
         },
         addMoviesHistory(videosession, username) {
