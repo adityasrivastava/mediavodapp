@@ -15,7 +15,7 @@
             <li ng-class="{active: selectedRoute('/home')}"><a href="/">Home</a></li>
           </ul>-->
           <ul class="nav navbar-nav navbar-right">
-            <li  ng-if="profile" ng-class="{active: selectedRoute('/history')}" style="color: #03A9F4;"><a href="#!/history"><span>History</span></a></li>
+            <li  ng-if="profile" ng-class="{active: selectedRoute('/history')}" ><a href="#!/history"><span style="color: #03A9F4;">History</span></a></li>
             <li  ng-class="{active: selectedRoute('/login')}" ><a href="#!/login" style="color: #03A9F4;"><i class="glyphicon glyphicon-user"></i><span ng-if="!profile" style="color: #03A9F4;"> Login</span><span ng-if="profile" style="color: #03A9F4;"> {{userprofile.username}}</span></a></li>
           </ul>
         </div>

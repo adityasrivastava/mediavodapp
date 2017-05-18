@@ -2,19 +2,11 @@
 
 angular.module('mediavodapp.components')
 .controller('MovieHistoryController',['$scope','$timeout','moviesFactory','$uibModal','UserProfileService',function($scope, $timeout, moviesFactory, $uibModal, UserProfileService){
-    $scope.movies = undefined;
+    $scope.movies = {};
 
     $scope.selectedVideo = {};
 
     $scope.userprofile = {};
-
-    $scope.carouselproperties = {
-         active : 0,
-         interval : 2000,
-         nopause : false,
-         notransition: false
-     }
-
 
     $scope.selectVideo = function (videoSelected) {
         console.log(videoSelected);
@@ -22,8 +14,8 @@ angular.module('mediavodapp.components')
         $uibModal.open({
                     animation: true,
                     templateUrl: 'playerModal.html',
-                    controller : 'SelectVideoController2',
-                    controllerAs: '$playerCtrl2',
+                    controller : 'SelectVideoController',
+                    controllerAs: '$playerCtrl',
                     resolve: {
                         videoDetails: function () {
                         return $scope.selectedVideo;
@@ -50,14 +42,14 @@ angular.module('mediavodapp.components')
 
 }]);
 
-angular.module('mediavodapp.components').controller('SelectVideoController2',['$uibModalInstance','videoDetails',"$scope",function($uibModalInstance,videoDetails,$scope){
+angular.module('mediavodapp').controller('SelectVideoController',['$uibModalInstance','videoDetails',"$scope",function($uibModalInstance,videoDetails,$scope){
 
-    var $playerCtrl2 = this;
-    $playerCtrl2.videoDetails = videoDetails;
+    var $playerCtrl = this;
+    $playerCtrl.videoDetails = videoDetails;
 
     $scope.$on('modal.closing', function(){
         console.log("closed");
-        $playerCtrl2.videoDetails = undefined;
+        $playerCtrl.videoDetails = undefined;
     });
 
     console.log("Called");

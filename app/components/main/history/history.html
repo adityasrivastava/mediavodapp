@@ -1,21 +1,32 @@
-<div class=history-container container">
+<div class="hsitory-container container">
 
-    <div class="movies-list" ng-if="movies">
-        <div uib-carousel>
+    <div class="row" style="margin-top: 10px;margin-bottom: 10px;">
+        <div class="col-sm-12" >
+            <h4 class="text-center" style="color: #03A9F4;">Please try reloading page if content is not available.</h4>
+        </div>    
+    </div>
+
+    <div class="row">
+        <div class="col-md-12" style="margin-top: 10px;margin-bottom: 10px;">
+                <div class="movies-list" ng-if="movies">
+        <div uib-carousel active="carouselproperties.active" interval="carouselproperties.interval" no-transition="carouselproperties.notransition" no-pause="carouselproperties.nopause">
             <div uib-slide ng-repeat="m in movies.entries track by $index" index="$index">
             <div class="carousel-item-container" ng-click="selectVideo(m)">
                 <img ng-src="{{m.images[0].url}}" style="margin:auto;"/>
                 <div class="carousel-caption">
-                    <h4>{{m.title}}</h4>
+                    <h4 style="color: #03A9F4;">{{m.title}}</h4>
                 </div>
             </div>
             </div>
         </div>
     </div>
+        </div>
+    </div>
+
 </div>
 
 <script type="text/ng-template" id="playerModal.html">
         <div class="modal-body" id="modal-body">
-            <video-element  video-content="$playerCtrl2.videoDetails"></video-element>
+            <video-element  video-content="$playerCtrl.videoDetails"></video-element>
         </div>
 </script>
