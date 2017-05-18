@@ -14,6 +14,9 @@ Features:
 ## Requirements 
 
 * NodeJS
+* AngularJS
+* Bootstrap
+* Plyr plugin
 * Mongodb 
 
 ## Getting Started
